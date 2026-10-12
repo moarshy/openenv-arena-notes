@@ -3,11 +3,11 @@
 | | |
 |---|---|
 | Submission ID | `workbench-v2` (planned) |
-| Submitted | not yet |
-| Run | |
+| Submitted | 2026-10-12 20:51 (+08), sent automatically when the slot opened; validated in under 10 min |
+| Run | `82af98463efe75a39c08993e` ([dashboard](https://openenvarena-training.hf.space/?project=arshy&runs=82af98463efe75a39c08993e)) |
 | Image | `ghcr.io/moarshy/workbench:v2` (`sha256:66dab881…341d`) |
 | Dataset / source | [arshy/workbench](https://huggingface.co/datasets/arshy/workbench) · [github.com/moarshy/workbench](https://github.com/moarshy/workbench) |
-| Arena result | |
+| Arena result | **4/40** (Δ 0): office 2, industrial 1, **math 1** (the first math point in 41 scored runs) |
 
 ## Hypothesis
 - **Fact:** all three 5/40 runs kept the untrained model's 4 (industrial 2 + office 2) and gained exactly one task. They used 12 tasks of realistic code or log work.
@@ -60,6 +60,26 @@ So calibration understates success. v2's arena training reward (about 0.8) was w
 - Example actions: `ls /app`, then `submit`. Finish action: an empty `submit`.
 - Before submitting: an anonymous pull of the public image, `openenv validate` PASS, schema match, and all 29 container checks passed.
 ## Training (arena dashboard)
+- **109 steps** (v2 had 104), despite the shorter episodes. Step time stayed about the same, so the arena's step cost is not dominated by our episode length (inference).
+
 ## Result
+| domain | untrained | v1 | v2 | v3 |
+|---|---|---|---|---|
+| office | 2 | 2 | 2 | 2 |
+| industrial | 2 | 0 | 1 | 1 |
+| **math** | 0 | 0 | 0 | **1** |
+| others | 0 | 0 | 0 | 0 |
+| **total** | **4** | **2** | **3** | **4** |
+
+The leaderboard row (best per domain) is now office 2, industrial 1, math 1: an average of **10%**, equal to the untrained reference.
+
 ## Lessons
+- **Fact:** the first non-zero math score among 41 runs. The math column measures SkillsBench-style math (operations research, planning). Our only math-like family was routing, a small VRP solved by writing a solver in a sandbox.
+- **Caution:** one hidden task, one attempt. It could be noise. A replication, or a run without routing, would separate the two.
+- **Fact:** industrial is still 1 (v2 got 1, v1 got 0). We keep losing one of the base model's two industrial tasks.
+- **Fact:** cutting actions from 20 to 12 did not buy more optimizer steps (104 → 109).
+
 ## Next
+- Find out whether the math point is real: keep routing and strengthen it (bigger VRPs, scheduling, assignment), and see whether math stays above 0.
+- Protect industrial: investigate what kind of industrial task the base model solves (SkillsBench industrial: control, power flow, dispatch, manufacturing scheduling) and add something close to it.
+- More steps don't come from shorter episodes. Look at the task count and group composition instead.

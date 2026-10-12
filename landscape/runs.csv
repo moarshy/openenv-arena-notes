@@ -34,3 +34,9 @@ ad587f39ab6d4c69902c9efb,naklitechie,Null control (constant reward 0.5),null-con
 b7b099ac6e17f44a4c665a01,rycerzes,Verified Compute Lab (Workbench v2),verified-compute-lab-v2,2026-10-12 03:38,29,110,3,-1,1,2,0,0,0,0,0,0,rycerzes/openenv-arena-compute-lab,python|file-tools|repo/tests,partial|binary,True,5851
 ecbdaf68dc5cee84b21c34de,rca-umb,Five Desks v3: find the caveat (eight domains),five-desks-v3,2026-10-12 06:17,8,172,1,-3,0,0,0,1,0,0,0,0,rca-umb/five-desks,python|sql,partial|binary,True,10341
 fddce64c37df08faee9081f2,NoeFlandre,Workbench Gym,workbench-gym-v2,2026-10-12 06:32,36,144,4,0,1,2,0,1,0,0,0,0,NoeFlandre/workbench-gym,python|file-tools,binary,True,1146
+9b4d8ace31173c7ce5155869,ruv,MetaHarness Procedural Reasoning (mixed-signal cells),metaharness-mix8-20261012,2026-10-12 12:23,8,276,4,0,0,2,0,1,1,0,0,0,ruv/metaharness-arena-tasks,,partial,True,1484
+9134d27884edb3532682106b,Louistiti,Quantitative Reasoning Lab v4,quantitative-reasoning-lab-v4,2026-10-12 13:27,2,118,2,-2,0,1,0,1,0,0,0,0,,,,False,0
+b8760b0b0db16e1842956802,Syndicate604,Evidence Desk: ledger baseline,evidence-desk-v1,2026-10-12 18:18,2,253,3,-1,1,1,0,1,0,0,0,0,Syndicate604/evidence-desk,calculator,binary,True,1859
+c583c91a8555ec252893d574,Profa-QE,QE Arena: bug repair and mutation kill (Profa-QE),profa-qe-arena-v1,2026-10-12 19:04,5,267,4,0,0,1,0,2,1,0,0,0,Profa-QE/openenv-qe-arena-tasks,python,,False,1309
+4317416828e4cfc73d2b8594,nice-bill,ShiftDesk: eight-domain tool desk with shifting tool names,shiftdesk-v2,2026-10-12 23:06,24,170,1,-3,0,0,0,1,0,0,0,0,nice-bill/shiftdesk,bash|python|repo/tests,,True,3061
+82af98463efe75a39c08993e,arshy,"Workbench v2: workspace habits + code repair (run_bash, caveats, exact outputs, hidden tests)",workbench-v2,2026-10-13 00:34,11,109,4,0,0,1,0,2,0,1,0,0,arshy/workbench,bash|repo/tests,,False,2677
