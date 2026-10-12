@@ -1,13 +1,37 @@
-# OpenEnv Arena log (arshy)
+# OpenEnv Arena notes
 
-What we built, why, what the arena said, and what everyone else is doing.
+A public lab notebook from competing in [OpenEnv Arena](https://openenvarena-arena.hf.space/), by [arshy](https://huggingface.co/arshy).
 
-- [RESULTS.md](RESULTS.md): one table across our versions
-- [versions/](versions/): one record per submission, from [TEMPLATE.md](versions/TEMPLATE.md)
-  (hypothesis → design → calibration → contract → training → result → lessons → next)
-- [landscape/](landscape/): dated snapshots of all scored runs and board posts, plus `runs.csv`
+In the arena, you build an RL *environment*. The arena trains Qwen3.8-27B on it with a fixed GRPO recipe for about 4 hours, then scores the trained model on 40 hidden tasks across 8 domains. This repo records what we built, why, what the arena said, and what everyone else is doing.
 
-## Routine
-1. **Before designing a version:** run `python3 scripts/study_board.py` and read the new snapshot.
-2. **When submitting:** copy `versions/TEMPLATE.md` and fill in everything up to "Submission contract".
-3. **After the result:** fill in training, result, lessons and next. Add a row to RESULTS.md and run the study again.
+## Results
+
+| version | idea | score (untrained: 4/40) |
+|---|---|---|
+| [v1 Stepwise Math](versions/v1-stepwise-math.md) | Exact-answer math with a calculator tool | 2/40 |
+| [v2 Workbench](versions/v2-workbench.md) | Workspace habits via `run_bash`: grep big workspaces, catch hidden caveats, write exact output files | 3/40 |
+
+Details: [RESULTS.md](RESULTS.md).
+
+## Findings so far
+- **The hidden test looks SkillsBench-shaped.**
+  - An earlier commit of the arena Space named its reference benchmark `skillsbench-balanced40-v2`.
+  - [SkillsBench](https://github.com/benchflow-ai/skillsbench)'s taxonomy matches the arena's 8 domain IDs exactly.
+  - The organizers' OpenEnv adapter uses `run_bash` + `submit`.
+
+  In SkillsBench, "math" means operations research, planning and Lean, solved in a sandbox. That is not arithmetic, which explains why arithmetic environments (including our v1) don't move the math column. See the [v2 record](versions/v2-workbench.md).
+- **Format, not reasoning, is the main failure with thinking off.**
+  - In our calibration, most failed episodes were a sentence of prose before the JSON action, unescaped quotes from shell commands inside JSON, or the model's native `<tool_call>` format leaking out.
+  - Under strict parsing, medium and hard solve rates dropped from about 5/8 to about 2/8.
+- **Learning signal is necessary but not sufficient.** Several runs (ours included) had healthy mixed reward groups and still didn't move the hidden score.
+- **Long multi-turn episodes cost training budget.** v2 got 104 optimizer steps; v1 got 257.
+- **Across 35 scored runs, only 3 beat the untrained model, and none by more than 1 task.** See [landscape/](landscape/).
+
+## How this repo works
+- `versions/`: one record per submission, from [TEMPLATE.md](versions/TEMPLATE.md) (hypothesis → design → calibration → contract → training → result → lessons → next).
+- `landscape/`: dated snapshots of every scored run and board post, plus `runs.csv`. Regenerate with `python3 scripts/study_board.py` (stdlib only; it reads the arena's public APIs and dataset cards).
+- **Routine:** study the board before designing, record the version at submission, and complete the record when the score lands.
+
+## Code
+- [moarshy/stepwise-math](https://github.com/moarshy/stepwise-math) (v1)
+- [moarshy/workbench](https://github.com/moarshy/workbench) (v2)
