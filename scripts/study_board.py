@@ -154,6 +154,9 @@ def main():
         body = " ".join(m["body"].split())
         lines.append(f"- **{m['author']}** ({when}): {body[:400]}{'…' if len(body) > 400 else ''}")
 
+    if not new_runs and not new_msgs:
+        print(f"{len(rows)} runs, nothing new since the last snapshot; runs.csv refreshed, no snapshot written")
+        return
     snap = OUT / f"{datetime.now():%Y-%m-%d_%H%M}.md"
     snap.write_text("\n".join(lines) + "\n")
     STATE.write_text(json.dumps({"run_ids": [r["run_id"] for r in rows],
