@@ -1,0 +1,36 @@
+run_id,user,name,submission_id,evaluated,tasks,steps,solved,delta,software,industrial,science,office,finance,math,security,media,dataset,interface,reward,procedural,card_chars
+16b837f08ba5e6d59b7c4779,burtenshaw,SQL Investigation Lab,sql-investigation-v5,2026-10-08 20:57,10,10,4,0,0,2,0,2,0,0,0,0,burtenshaw/openenv-sql-investigation,python|sql|file-tools,partial,True,2631
+0d0656dfbb4ff4e36b7e6f4f,NoeFlandre,Log Triage,log-triage-v1,2026-10-09 03:18,12,337,5,1,1,2,0,2,0,0,0,0,NoeFlandre/log-triage,,,False,1218
+03bfc81de59cf3e53b9e05d0,akseljoonas,MiMo v2.6 software engineering (8 tasks),mimo-software-v2-20261008,2026-10-09 03:30,8,77,4,0,1,1,0,2,0,0,0,0,akseljoonas/mimo-openenv-software,bash|python|repo/tests,binary,False,6459
+8b516a5ee48fdecb227eb907,theykk,Ledger Check,ledger-check-v1,2026-10-09 03:45,50,319,2,-2,0,0,0,2,0,0,0,0,theykk/ledger-check,,,True,816
+74662cd3429db06ca50c84c0,Louistiti,Python Repair Lab v2,python-repair-lab-v2,2026-10-09 05:14,50,297,2,-2,0,0,0,2,0,0,0,0,Louistiti/openenv-python-repair,bash|python|repo/tests,partial,True,5728
+777d0321e7c47fac5fdad3ff,ajinkyamulay,Analyst Workbench,analyst-workbench-v4,2026-10-09 07:34,24,178,2,-2,0,1,0,1,0,0,0,0,ajinkyamulay/analyst-workbench,python|repo/tests,partial|binary,True,3810
+b85bc43ba95aac33a1f57c5e,kshitijthakkar,GenAI OTel Trace Lab,genai-otel-trace-lab-v1,2026-10-09 08:01,8,207,4,0,1,2,0,1,0,0,0,0,kshitijthakkar/trace-path-lab,bash,partial,False,2414
+accd075dcaf721b0d7ee15e1,ruv,MetaHarness Procedural Reasoning (mixed-signal cells),metaharness-mix8-20261009,2026-10-09 12:19,8,274,4,0,1,0,0,3,0,0,0,0,ruv/metaharness-arena-tasks,,partial,True,1484
+1aec64b23fa41461888f4586,Bhuminjay,Club Mix: 50 tasks from five Attoloop environments,club-mix-v1,2026-10-09 22:20,50,27,2,-2,0,1,0,1,0,0,0,0,Attoloop/club-mix,bash,,False,3800
+243ebc2ee1140177ac397ab3,NoeFlandre,Audit Trail,audit-trail-v1,2026-10-10 03:14,24,312,4,0,1,0,0,2,0,0,1,0,NoeFlandre/audit-trail,,,False,2214
+1d61c4f2629479b7d6fcb20e,akseljoonas,MiMo v2.6 practical code and artifacts (12 tasks),mimo-curriculum-v3-20261009,2026-10-10 03:28,12,84,5,1,0,2,0,2,1,0,0,0,akseljoonas/mimo-openenv-software,bash|python|sql|repo/tests,binary,False,9088
+64489aec4f2c07bdc30a2a3f,rca-umb,"Five Desks: finance, science, math, security and media desk work",five-desks-v1,2026-10-10 05:41,18,265,2,-2,0,1,0,1,0,0,0,0,rca-umb/five-desks,python|calculator,partial,True,7298
+eb2bf81abb27b075fe38da84,qingyuanwu,Reconcile Lab,reconcile-lab-v1,2026-10-10 05:52,9,178,3,-1,0,1,0,2,0,0,0,0,qingyuanwu/reconcile-lab,bash|python|sql,,True,2388
+c5759276f6abba5fff7bef89,theykk,KV-Batch Repair Lab,kvbatch-repair-v1,2026-10-10 06:43,2,291,2,-2,0,1,0,1,0,0,0,0,theykk/kvbatch-repair,bash|python|repo/tests,partial|binary,False,1706
+fd70ac7bb85a1e8469f38039,ruv,MetaHarness Procedural Reasoning (office focus),metaharness-office-20261010,2026-10-10 12:19,1,265,4,0,1,1,0,1,0,0,0,1,ruv/metaharness-arena-tasks,,partial,True,1484
+ff8e9c755c65167158d9c06f,Louistiti,Python Repair Lab v3,python-repair-lab-v3,2026-10-10 12:33,12,154,5,1,0,2,0,2,0,0,0,1,Louistiti/openenv-python-repair,bash|python|repo/tests,partial,True,5728
+503c0330f64c53040a36b519,kshitijthakkar,Arena Domain Lab,arena-domain-lab-v2,2026-10-10 15:36,50,277,2,-2,1,0,0,1,0,0,0,0,kshitijthakkar/arena-eight-domain-rl-tasks,file-tools,,True,5769
+97f806610b0d0fdfcece1d20,ajinkyamulay,Analyst Workbench,analyst-workbench-v6,2026-10-10 16:17,25,118,3,-1,0,1,0,2,0,0,0,0,ajinkyamulay/analyst-workbench,python|repo/tests,partial|binary,True,6575
+5ac25542966872f3c530648e,arshy,Stepwise Math: multi-step math through an exact calculator,stepwise-math-v1,2026-10-10 16:31,8,257,2,-2,0,0,0,2,0,0,0,0,arshy/stepwise-math,calculator,,True,3157
+e28263fbfa9e3fe2a26acae4,Bhuminjay,Club Software,club-software-v1,2026-10-11 00:10,15,58,3,-1,0,2,0,1,0,0,0,0,Attoloop/club-software,bash|sql,,False,3239
+9a41aa8e1e4694e3a8809f8d,rycerzes,Verified Compute Lab,verified-compute-lab-v1,2026-10-11 02:30,17,140,4,0,0,2,0,2,0,0,0,0,rycerzes/openenv-arena-compute-lab,python,partial,True,7033
+436eea46b06a4f12545572b1,cedricable,Cognitive RAN deterministic skills,cognitive-ran-openenv-v1-20261010,2026-10-11 04:52,18,343,3,-1,0,1,0,2,0,0,0,0,cedricable/cognitive-ran-openenv,,,False,2566
+6b3030829fa1125c96bad42a,rca-umb,"Five Desks v2: find the caveat, think in metadata (eight domains)",five-desks-v2,2026-10-11 05:56,9,207,2,-2,0,1,0,1,0,0,0,0,rca-umb/five-desks,python|sql,partial|binary,True,8967
+ba6dc0f3fc8a999f3c6e9feb,NoeFlandre,Workbench Gym,workbench-gym-v1,2026-10-11 06:20,36,169,2,-2,0,1,0,1,0,0,0,0,NoeFlandre/workbench-gym,python|file-tools,binary,True,1146
+56e3a8a522004ce5259b4aff,qingyuanwu,Reconcile Workflow Lab: eight domains,reconcile-workflow-lab-eight-standalone-v1,2026-10-11 06:42,48,162,2,-2,0,1,0,1,0,0,0,0,qingyuanwu/reconcile-workflow-lab,repo/tests,,False,4777
+2b1bed069459db5b029cbf52,ruv,MetaHarness Procedural Reasoning (office focus),metaharness-office-20261011,2026-10-11 12:26,1,245,2,-2,0,1,0,1,0,0,0,0,ruv/metaharness-arena-tasks,,partial,True,1484
+389221f48f271138fc352b25,Louistiti,Office Workflow Lab v1,office-workflow-lab-v1,2026-10-11 12:32,12,147,1,-3,0,0,0,1,0,0,0,0,Louistiti/openenv-office-workflow,python|sql,,False,1602
+3e08dabd61e62f573cca0799,piyushgupta53,FormulaGym: repair formulas in real Enron spreadsheets,formulagym-v1,2026-10-11 21:57,50,178,4,0,0,2,0,2,0,0,0,0,piyushgupta53/formulagym-arena,repo/tests,,True,5993
+f731ddcf73d9056fc41f7a1f,nice-bill,ShiftDesk: eight-domain tool desk with shifting tool names,shiftdesk-v1,2026-10-11 23:10,24,180,4,0,1,1,0,2,0,0,0,0,nice-bill/shiftdesk,bash|python|repo/tests,,True,3061
+a600462943db31233cdc0214,arshy,"Workbench: workspace habits (explore, grep, catch caveats, compute, write exact outputs)",workbench-v1,2026-10-12 00:31,9,104,3,-1,0,1,0,2,0,0,0,0,arshy/workbench,bash,,True,3022
+bbb7a0a9dda9141d10f00d0b,akseljoonas,MiMo v2.6 repair curriculum with observed reward variation (5 tasks),mimo-signal-v4-20261011,2026-10-12 01:31,5,55,3,-1,0,1,0,2,0,0,0,0,akseljoonas/mimo-openenv-signal-v4,bash|repo/tests,binary,False,6203
+ad587f39ab6d4c69902c9efb,naklitechie,Null control (constant reward 0.5),null-control-v1,2026-10-12 01:55,1,312,1,-3,0,0,0,1,0,0,0,0,naklitechie/openenv-null-control,,,False,1968
+b7b099ac6e17f44a4c665a01,rycerzes,Verified Compute Lab (Workbench v2),verified-compute-lab-v2,2026-10-12 03:38,29,110,3,-1,1,2,0,0,0,0,0,0,rycerzes/openenv-arena-compute-lab,python|file-tools|repo/tests,partial|binary,True,5851
+ecbdaf68dc5cee84b21c34de,rca-umb,Five Desks v3: find the caveat (eight domains),five-desks-v3,2026-10-12 06:17,8,172,1,-3,0,0,0,1,0,0,0,0,rca-umb/five-desks,python|sql,partial|binary,True,10341
+fddce64c37df08faee9081f2,NoeFlandre,Workbench Gym,workbench-gym-v2,2026-10-12 06:32,36,144,4,0,1,2,0,1,0,0,0,0,NoeFlandre/workbench-gym,python|file-tools,binary,True,1146
