@@ -28,6 +28,9 @@ Details: [RESULTS.md](RESULTS.md).
 - **Long multi-turn episodes cost training budget.** v2 got 104 optimizer steps; v1 got 257.
 - **Across 35 scored runs, only 3 beat the untrained model, and none by more than 1 task.** See [landscape/](landscape/).
 
+## Research
+- [2026 RL environment research, applied to the arena](research/2026-10-13-rl-env-research.md)
+
 ## The environments
 What each version tried, as pseudocode with example episodes: [ENVIRONMENTS.md](ENVIRONMENTS.md).
 
