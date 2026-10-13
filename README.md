@@ -28,6 +28,9 @@ Details: [RESULTS.md](RESULTS.md).
 - **Long multi-turn episodes cost training budget.** v2 got 104 optimizer steps; v1 got 257.
 - **Across 35 scored runs, only 3 beat the untrained model, and none by more than 1 task.** See [landscape/](landscape/).
 
+## The environments
+What each version tried, as pseudocode with example episodes: [ENVIRONMENTS.md](ENVIRONMENTS.md).
+
 ## How this repo works
 - `versions/`: one record per submission, from [TEMPLATE.md](versions/TEMPLATE.md) (hypothesis → design → calibration → contract → training → result → lessons → next).
 - `landscape/`: dated snapshots of every scored run and board post, plus `runs.csv`. Regenerate with `python3 scripts/study_board.py` (stdlib only; it reads the arena's public APIs and dataset cards).
