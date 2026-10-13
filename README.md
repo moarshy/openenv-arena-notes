@@ -31,6 +31,7 @@ Details: [RESULTS.md](RESULTS.md).
 
 ## Research
 - [2026 RL environment research, applied to the arena](research/2026-10-13-rl-env-research.md)
+- [Where everyone stands (2026-10-14)](landscape/analysis-2026-10-14.md)
 
 ## The environments
 What each version tried, as pseudocode with example episodes: [ENVIRONMENTS.md](ENVIRONMENTS.md).
