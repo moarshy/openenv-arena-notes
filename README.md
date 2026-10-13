@@ -10,7 +10,8 @@ In the arena, you build an RL *environment*. The arena trains Qwen3.8-27B on it 
 |---|---|---|
 | [v1 Stepwise Math](versions/v1-stepwise-math.md) | Exact-answer math with a calculator tool | 2/40 |
 | [v2 Workbench](versions/v2-workbench.md) | Workspace habits via `run_bash`: grep big workspaces, catch hidden caveats, write exact output files | 3/40 |
-| [v3 Workbench v2](versions/v3-workbench-v2.md) | + code repair (hidden tests), 12-action episodes, harder caveats | **4/40, incl. the first math point of any run (1 of 41)** |
+| [v3 Workbench v2](versions/v3-workbench-v2.md) | + code repair (hidden tests), 12-action episodes, harder caveats | 4/40, incl. a math point (the first of any run) |
+| [v4 replicate of v3](versions/v4-replicate.md) | Identical resubmission to test noise | 3/40, math back to 0: the math point didn't replicate |
 
 Details: [RESULTS.md](RESULTS.md).
 
