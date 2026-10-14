@@ -12,6 +12,7 @@ In the arena, you build an RL *environment*. The arena trains Qwen3.8-27B on it 
 | [v2 Workbench](versions/v2-workbench.md) | Workspace habits via `run_bash`: grep big workspaces, catch hidden caveats, write exact output files | 3/40 |
 | [v3 Workbench v2](versions/v3-workbench-v2.md) | + code repair (hidden tests), 12-action episodes, harder caveats | 4/40, incl. a math point (the first of any run) |
 | [v4 replicate of v3](versions/v4-replicate.md) | Identical resubmission to test noise | 3/40, math back to 0: the math point didn't replicate |
+| [v5 Workbench v3](versions/v5-workbench-v3.md) | Software on real libraries + industrial (reflow audit, plant tuning) | 3/40: industrial kept at 2 for the first time; no software point |
 
 Details: [RESULTS.md](RESULTS.md).
 
