@@ -80,5 +80,25 @@ Almost every failure was **budget exhaustion**: whole-file `cat`, full pytest ou
 
 The economical path for each takes about 4–5 actions; careless reading still fails.
 
-## Calibration (budget-fit set)
-(pending)
+## Calibration (budget-fit set), before submission
+Strict one-JSON parsing, arena budget rules, 8 episodes per task, two rounds. Round 2 added compact instructions (about 75–115 tokens), function line ranges for the located bugs, and one-commit git repos.
+
+| task | round 1 | round 2 |
+|---|---|---|
+| pyrepo-located | 1/8 | 0/8 |
+| pyrepo-located2 | 0/8 | 0/8 |
+| pyrepo-bug1 | 1/8 | 0/8 |
+| reflow-lite | 1/8 | 2/8 |
+| downtime-lite | 2/8 | 1/8 |
+| expenses-lite | 0/8 | 0/8 |
+| routing-medium | 3/8 | 1/8 |
+| routing-hard | 1/8 | 0/8 |
+| **total** | **9/64** | **4/64** |
+
+**Pooled: 13/128, about 10%.** At p ≈ 0.1 with groups of 5, about 40% of training steps should have mixed rewards (inference: 1 − 0.9⁵ − 0.1⁵).
+
+**Failure anatomy (round 2):** 33 budget exhaustion, 30 format (13 broken JSON, 12 prose before JSON, 5 no JSON). In transcripts the model lists every directory, cats each document, writes a long script, then a second "verification" script, and runs out of budget, sometimes after already having the right answer.
+
+**Decision:** submit this set unchanged. Further easing would not target the failure, which is habits, not task size. It would also drift from the eval's likely difficulty. The training curve is the first readout: does the reward rise from about 0.1?
+
+**Added prediction (training curve):** if H1 holds, training reward rises from about 0.1 and mean reply length falls. A flat curve means the fixed recipe can't teach economy and format in about 100 steps.
