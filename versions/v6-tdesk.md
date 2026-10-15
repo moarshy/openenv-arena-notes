@@ -54,5 +54,31 @@ Every entrant, including us, trained a different schema with looser budgets. The
 
 **What we will compare:** this run against v1–v5 (mean 3.0) and the field (mean 2.98), domain by domain, plus the training curves against v5's.
 
-## Design, calibration, contract, result
-(filled in as the build proceeds and after evaluation)
+## Amendment 1 (2026-10-15, before submission): budget-fit tasks
+Written after the first calibration and before any arena result. The predictions and verdict rules above are unchanged.
+
+**What calibration found.** Calibration used Qwen3.8-27B via OpenRouter, thinking off, **strict** one-JSON parsing, and the arena's budget rules: completion 4,096 counting replies plus every observation after the first, and context 8,192. The v5 tasks, unchanged except for the interface:
+
+| task | solved (tdesk rules) | same task under Workbench budgets |
+|---|---|---|
+| pyrepo-bug1 / bug2 / implement | 0/24 | 5/8, 4/8, 1/8 |
+| reflow-hard | 0/8 | 3/8 |
+| expenses-easy / medium | 0/16 | 5/8 (easy) |
+| routing-medium / hard | 2/8, 3/8 | 7/8 (medium) |
+
+Almost every failure was **budget exhaustion**: whole-file `cat`, full pytest output, 80-line `sed` ranges, then out of tokens after 4–6 actions. The rest were broken JSON. This supports H1's *mechanism*: under the real budget, the untrained model fails our tasks for want of economy, not knowledge.
+
+**Reward hack found.** In `plant`, the model decoded the base64/zlib-"sealed" simulator parameters ("Let me first decode the embedded parameters…") instead of experimenting. `plant` is removed from T-Desk.
+
+**Change.** At about 0% solve rate, GRPO groups have zero variance and the run could not test H1. So the task *difficulty* is adjusted to sit at 30–70% under the real budget; the interface is unchanged. The new task set:
+- `pyrepo-located`, `pyrepo-located2`: the instruction names the function(s) and one test command.
+- `pyrepo-bug1`: the harder tier.
+- `reflow-lite`: about 20-line handbook, 3 runs, ramp only, one revision trap.
+- `downtime-lite`: 3 machines, short handbook, one amendment.
+- `expenses-lite`: about 80 claims, short policy, one caveat.
+- `routing-medium`, `routing-hard`: unchanged.
+
+The economical path for each takes about 4–5 actions; careless reading still fails.
+
+## Calibration (budget-fit set)
+(pending)
