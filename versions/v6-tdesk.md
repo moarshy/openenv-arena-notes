@@ -6,7 +6,7 @@
 |---|---|
 | Submission ID | `tdesk-v1` (planned) |
 | Image | `ghcr.io/moarshy/workbench:tdesk-v1` (planned) |
-| Arena result | (filled in after evaluation) |
+| Arena result | **0/40** (every domain 0): run `f22f124a548debdd4821f64b`, 119 steps, submitted 2026-10-15 20:58 |
 
 ## Why we are trying this
 **Background: no environment has measurably moved the private score.** Evidence as of 2026-10-15, 68 scored runs:
@@ -102,3 +102,28 @@ Strict one-JSON parsing, arena budget rules, 8 episodes per task, two rounds. Ro
 **Decision:** submit this set unchanged. Further easing would not target the failure, which is habits, not task size. It would also drift from the eval's likely difficulty. The training curve is the first readout: does the reward rise from about 0.1?
 
 **Added prediction (training curve):** if H1 holds, training reward rises from about 0.1 and mean reply length falls. A flat curve means the fixed recipe can't teach economy and format in about 100 steps.
+
+
+## Result (2026-10-16)
+**0/40. Every domain scored 0**, including the office and industrial tasks most runs keep.
+
+**Training curve.** The smoothed reward rose from about 0.2 to about 0.55 over the first 40 steps. Mixed groups (0.25/0.5/0.75) appeared after step 4. There were "Rollout failed; retrying" alerts throughout, which are likely budget-overflow episodes dropped instead of scored 0.
+
+**Verdict against the pre-registered rules: against H1** (total ≤ 3, with the training reward rising).
+
+**Context that arrived during the run, not available at pre-registration:**
+- naklitechie's repeated null control (zero updates) scored 1/40 and then 0/40. The no-update range is about **0–2**, mean about 1.25, against about 2.97 for trained runs (naklitechie's comparison). So "untrained = 4/40" is not the right reference: the zero-learning pipeline scores about 1.25.
+- rca-umb's hard collapse test (trained to quit on the first reply, reward 0.20 → 0.97) also scored 0/40, also inside the no-update range.
+
+**Reading:**
+- **What T-Desk did not do:** it did not produce the generic gain that ordinary trained runs show (about +1.7 over no-update). Its score sits at the no-update floor even though training reward rose.
+- **Likely explanations** (inference, not tested):
+  1. The private eval is **not** served through `tbench2_env` with these budgets. Then training the `action_type` schema and tbench2 habits doesn't carry, and may compete with the eval's real format. Most entries use JSON-answer or run_bash-style schemas and get the generic gain.
+  2. What it learned (finishing within the budget on our narrow tasks, possibly helped by budget-overflow episodes being *dropped* rather than scored 0) doesn't apply to the private tasks.
+  3. Noise: 0 is within the no-update range, so a single run can't separate "no transfer" from "harmful transfer".
+- **What it does tell us:** copying the smoke-test interface is not enough to move the private score. The smoke tests may not reflect how heldout-v2 is served.
+
+## Next
+- Our leaderboard row is unaffected (best per domain stays office 2, industrial 2, math 1 = 5/40).
+- Use the corrected reference in future comparisons: no-update about 1.25, trained runs about 3.
+- The generic gain seems to come from format and brevity on the eval's actual schema, which we still don't know.

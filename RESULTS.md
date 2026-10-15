@@ -8,6 +8,7 @@ The benchmark is heldout-v2: 40 hidden tasks, 5 per domain, one attempt each. Th
 | [v2 Workbench](versions/v2-workbench.md) | 2026-10-11 | Workspace habits via run_bash, hidden caveats, exact output files | 9 | 104 | **3/40** | −1 | 0 | 1 | 0 | 2 | 0 | 0 | 0 | 0 |
 | [v3 Workbench v2](versions/v3-workbench-v2.md) | 2026-10-12 | + code repair family, 12-action episodes, harder medium | 11 | 109 | **4/40** | 0 | 0 | 1 | 0 | 2 | 0 | **1** | 0 | 0 |
 | [v4 replicate of v3](versions/v4-replicate.md) | 2026-10-13 | identical image and tasks, to measure noise | 11 | 117 | **3/40** | −1 | 0 | 1 | 0 | 2 | 0 | 0 | 0 | 0 |
+| [v6 T-Desk](versions/v6-tdesk.md) | 2026-10-15 | **pre-registered**: same task families behind the organizers' tbench2_env interface and smoke budgets | 8 | 119 | **0/40** | −4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | [v5 Workbench v3](versions/v5-workbench-v3.md) | 2026-10-14 | software (real-library repair) + industrial (reflow, plant tuning) | 10 | 121 | **3/40** | −1 | 0 | **2** | 0 | 1 | 0 | 0 | 0 | 0 |
 
 **Leaderboard row** (best per domain across our runs): office 2/5, **industrial 2/5**, math 1/5, so an average of **12.5%**. v3 had the only math point among the runs at the time, but **the identical replicate (v4) scored math 0**, so it was most likely noise.
