@@ -33,6 +33,7 @@ Details: [RESULTS.md](RESULTS.md).
 
 ## Research
 - [2026 RL environment research, applied to the arena](research/2026-10-13-rl-env-research.md)
+- [Two streams after T-Desk: Aug–Oct 2026 research + competition (2026-10-16)](research/2026-10-16-two-streams.md)
 - [Where everyone stands (2026-10-14)](landscape/analysis-2026-10-14.md)
 - [Can an environment move the score at all? (2026-10-15)](landscape/analysis-2026-10-15.md)
 
