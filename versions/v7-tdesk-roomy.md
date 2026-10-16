@@ -4,9 +4,9 @@
 
 | | |
 |---|---|
-| Submission ID | `tdesk-roomy-v1` (planned) |
+| Submission ID | `tdesk-roomy-v1`, submitted 2026-10-16 20:59; run `e621699d3942100a2ff114eb`, 105 steps |
 | Image | `ghcr.io/moarshy/workbench:tdesk-roomy-v1` (planned) |
-| Arena result | (filled in after evaluation) |
+| Arena result | **2/40**: industrial 1, office 1 |
 
 ## Why
 v6 T-Desk scored **0/40**, at the no-update floor, even though its training reward rose. It changed three things at once compared with v5 (Workbench v3, 3/40):
@@ -58,3 +58,22 @@ Qwen3.8-27B via OpenRouter, thinking off, **strict** one-JSON parsing, 12,288 / 
 - In past runs the arena's training reward sat well above our strict calibration (v2 about 0.6–0.8 against about 2/8 strict; v6 0.2–0.55 against about 10%). So the arena likely parses more leniently, and the real signal should exceed 17% (inference).
 - **Decision:** submit without tuning, so the one-factor comparison with v5/v6 holds.
 - **Added prediction:** fewer "Rollout failed" alerts than v6, and a starting training reward clearly above v6's.
+
+
+## Result (2026-10-17)
+**2/40** (industrial 1, office 1), 105 steps.
+
+**Verdict against the pre-registered rules: ≥ 2/40 → supports H-budget.** The tbench2 interface with a roomy budget lands in the trained band, not at the no-update floor where v6 (tight budget) landed.
+
+**Caveats:**
+- 2 sits at the edge of both ranges: the no-update range is 0–2 and trained runs average about 3. So the evidence is weak, and the 0 vs 2 difference between v6 and v7 is within single-run noise (identical reruns differ by up to 2).
+- v7 also changed the tasks back to v5's. The budget and the budget-fit tasks are not separated.
+
+**Comparison:**
+| | interface | budget | tasks | score |
+|---|---|---|---|---|
+| v5 | run_bash | 12k/16k | Workbench v3 | 3 |
+| v6 | tbench2 | 4k/8k | budget-fit | 0 |
+| v7 | tbench2 | 12k/16k | Workbench v3 − plant | 2 |
+
+**Reading:** consistent with "the tight budget, or what it did to training (dropped overflow episodes, near-zero solve rates), is what put v6 at the floor". The tbench2 interface by itself did not help either: v7 ≤ v5. Copying the smoke-test interface is neutral at best.
