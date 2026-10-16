@@ -39,5 +39,22 @@ v7 keeps the **tbench2 interface** and restores the **v5 budget and v5 tasks**. 
 
 **Training-curve expectation:** with the roomy budget, offline calibration predicts 40–60% solves, so early reward should start well above v6's ≈0.1–0.2. There should be far fewer "Rollout failed" alerts.
 
-## Calibration, contract, result
-(filled in before submission and after evaluation)
+## Calibration (before submission)
+Qwen3.8-27B via OpenRouter, thinking off, **strict** one-JSON parsing, 12,288 / 16,384 budget accounting, 8 episodes per task:
+
+| task | solved |
+|---|---|
+| pyrepo-bug1 | 0/8 |
+| pyrepo-bug2 | 0/8 |
+| pyrepo-implement | 3/8 |
+| repair-medium | 1/8 |
+| repair-hard | 1/8 |
+| reflow-hard | 3/8 |
+| downtime-medium | 2/8 |
+| expenses-easy | 1/8 |
+| **total** | **11/64 (17%)** |
+
+- **The failure mode changed.** Budget exhaustion fell from about half of all episodes (v6) to 5/64. **Invalid replies ended 55/64 episodes.** Longer episodes give more chances to break format: prose before the JSON, unescaped quotes, `<tool_call>` tags.
+- In past runs the arena's training reward sat well above our strict calibration (v2 about 0.6–0.8 against about 2/8 strict; v6 0.2–0.55 against about 10%). So the arena likely parses more leniently, and the real signal should exceed 17% (inference).
+- **Decision:** submit without tuning, so the one-factor comparison with v5/v6 holds.
+- **Added prediction:** fewer "Rollout failed" alerts than v6, and a starting training reward clearly above v6's.
