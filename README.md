@@ -13,6 +13,7 @@ In the arena, you build an RL *environment*. The arena trains Qwen3.8-27B on it 
 | [v3 Workbench v2](versions/v3-workbench-v2.md) | + code repair (hidden tests), 12-action episodes, harder caveats | 4/40, incl. a math point (the first of any run) |
 | [v4 replicate of v3](versions/v4-replicate.md) | Identical resubmission to test noise | 3/40, math back to 0: the math point didn't replicate |
 | [v5 Workbench v3](versions/v5-workbench-v3.md) | Software on real libraries + industrial (reflow audit, plant tuning) | 3/40: industrial kept at 2 for the first time; no software point |
+| [v7 T-Desk roomy](versions/v7-tdesk-roomy.md) (**pre-registered**) | The tbench2 interface with v5's roomy budget and tasks: isolates interface vs budget | pending |
 | [v6 T-Desk](versions/v6-tdesk.md) (**pre-registered**) | Same tasks, but the organizers' `tbench2_env` interface and budget: tests whether the interface mismatch is why nothing moves | **0/40**: against the hypothesis; at the no-update floor even though training reward rose |
 
 Details: [RESULTS.md](RESULTS.md).
