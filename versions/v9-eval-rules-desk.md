@@ -1,6 +1,8 @@
 # v9: Eval-rules desk (design draft, 2026-10-18)
 
-**Status:** design for review. Not built, not calibrated, not pre-registered.
+**Status:** built, calibrated and pre-registered. Run 1 was submitted on 2026-10-18 at 23:18:40 (+08), HTTP 202. Runs 2–5 are scheduled by `scripts/submit_chain.py`, one per slot (run 2 at about 2026-10-19 23:20), and the chain stops if a run is rejected or fails.
+
+**Image:** `ghcr.io/moarshy/workbench@sha256:abc5496b…00a5`. **Dataset:** `arshy/eval-rules-desk`.
 
 ## The idea in one line
 Train the **survival habits** the day-0 proxy showed are missing, under the **hidden test's exact rules**. The aim is that the model reaches a clean finish instead of dying first.
