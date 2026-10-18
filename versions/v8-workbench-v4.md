@@ -5,11 +5,11 @@
 | | |
 |---|---|
 | Submission ID | `workbench-v4` (scheduled for the next slot, about 2026-10-17 21:00 +08) |
-| Submitted | |
-| Run | |
+| Submitted | 2026-10-17 21:00:33 (+08), HTTP 202 |
+| Run | `a611a52d44618eac4641f5e2`, 108 steps ([dashboard](https://openenvarena-training.hf.space/?project=arshy&runs=a611a52d44618eac4641f5e2)) |
 | Image | `ghcr.io/moarshy/workbench:v4@sha256:90ad6f254133c5cbc9989f9149d8fb3a0e05cbf787e13b4a78298bbd2e7575f6` (public) |
 | Dataset / source | `arshy/workbench` (task list), github.com/moarshy/workbench |
-| Arena result | |
+| Arena result | **3/40** (Δ −1): office 2, industrial 1, finance 0, software 0 |
 
 ## Why
 - **The interface experiments are finished.** v6 (tbench2, tight budget) scored 0 and v7 (tbench2, roomy) 2. Copying the smoke-test interface did not help ([v7](v7-tdesk-roomy.md)). v8 goes back to our best setup: `run_bash`/`submit`, a 12,288 / 16,384 budget, 12 actions.
@@ -78,9 +78,33 @@ Qwen3.8-27B via OpenRouter, thinking off, 12,288 completion-budget accounting, 1
 - `frac_reward_zero_std` below about 0.6, since partial credit gives spread within groups.
 
 ## Training (arena dashboard)
+108 steps; validated, trained and evaluated without errors. The curves are on the dashboard and were not pulled into this record.
 
-## Result
+## Result (2026-10-18)
+**3/40**: office 2, industrial 1, every other domain 0.
+
+| domain | v5 (Workbench v3) | v7 | **v8** |
+|---|---|---|---|
+| office | 1 | 1 | **2** |
+| industrial | 2 | 1 | 1 |
+| finance | 0 | 0 | **0** |
+| software | 0 | 0 | 0 |
+| total | 3 | 2 | **3** |
+
+**Verdicts against the pre-registered rules:**
+- **H-finance: no support.** Finance 0. That is consistent with the loans tasks not transferring, but at an ≈11% base rate one run can't rule transfer out.
+- **H-protected: not contradicted.** A total of 3 is in the trained band (≥2) and matches the field's trained mean (≈2.97). The zeroing reward did not push the run to the no-update floor the way v6 did.
+- **Above our mean (≥4)? No.**
+- **Leaderboard row: unchanged** at office 2, industrial 2, math 1 = 5/40.
+
+**One observation, not a test:** office came back to 2. After 2026-10-14, only 2 of 22 field runs had office ≥2 (the "office drift"). We did not predict this, and it may be noise.
 
 ## Lessons
+- **Facts:**
+  - New finance tasks with traps, a protected-check reward and a success-gated bonus gave an ordinary trained-band score.
+  - Finance did not move.
+- **Inferences:**
+  - The hidden finance tasks probably differ from our loan audits in shape (documents? spreadsheets? other file types?), not just in domain label.
+  - The protected reward is at least not harmful, so it can stay as the default.
 
 ## Next
