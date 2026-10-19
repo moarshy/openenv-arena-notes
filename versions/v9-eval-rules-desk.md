@@ -138,3 +138,34 @@ Built as designed: `server/evalrules_environment.py`, `evalrules_models.py` and 
 **Context:**
 - Our previous 8 runs averaged 2.5. The field's runs average about 2.75 (SD 1.17) and drift downward over time.
 - One run's SD is about 1.2–1.7, so 5 runs give about ±0.75 on the mean difference.
+
+## Run 1 (`eval-rules-desk-v1`, run `8b8f055414db4dac7adff019`, 114 steps)
+**Hidden score: 3/40** (office 2, industrial 1). As pre-registered, a single run's score is not used to stop or continue.
+
+**Training validity check (the interim rule), from Trackio:**
+
+| quarter | mean reward | share of steps with zero-spread groups |
+|---|---|---|
+| 1 | 0.33 | 0.11 |
+| 2 | 0.38 | 0.25 |
+| 3 | 0.39 | 0.21 |
+| 4 | 0.46 | 0.29 |
+
+- 0 retries. The mean completion length rose from 672 to 943 tokens.
+- **Verdict: valid.** Reward rises, most groups have a spread, and nothing failed. **The chain continues to run 2.**
+
+**Per-task reward, first half → second half** (mapping step/task 1–9 to the submission's task order):
+
+| task | first half | second half |
+|---|---|---|
+| reflow-hard | 0.32 | 0.73 |
+| downtime-medium | 0.33 | 0.53 |
+| loans-medium | 0.23 | 0.25 |
+| pyrepo-bug1 | 0.69 | 0.76 |
+| repair-medium | 0.72 | 0.71 |
+| pyrepo-implement | 0.71 | 0.68 |
+| loans-hard | 0.09 | 0.11 |
+| expenses-medium | 0.08 | 0.10 |
+| expenses-easy | 0.09 | 0.13 |
+
+The industrial tasks learned clearly. Loans and expenses (xlsx/pdf inputs) barely moved past survival-level reward.
