@@ -169,3 +169,7 @@ Built as designed: `server/evalrules_environment.py`, `evalrules_models.py` and 
 | expenses-easy | 0.09 | 0.13 |
 
 The industrial tasks learned clearly. Loans and expenses (xlsx/pdf inputs) barely moved past survival-level reward.
+
+## Run 2 (`eval-rules-desk-v1-r2`, run `01c4b42db9c0710825ab04bc`, 110 steps)
+Submitted 2026-10-19 at about 23:20 (+08) by the chain. **Hidden score: 4/40** (industrial 2, office 2).
+Runs so far: 3, 4, mean 3.5. The verdict waits for all 5 runs and the same-day field comparison.
