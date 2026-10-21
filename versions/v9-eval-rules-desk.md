@@ -177,3 +177,7 @@ Runs so far: 3, 4, mean 3.5. The verdict waits for all 5 runs and the same-day f
 ## Run 3 (`eval-rules-desk-v1-r3`, run `8f91e4682721bfe681525b49`, 116 steps)
 Submitted 2026-10-20 at about 23:15 (+08). **Hidden score: 4/40** (industrial 2, office 2).
 Runs so far: 3, 4, 4, mean 3.67. Per the pre-registration there is no interim decision; all 5 runs complete.
+
+## Run 4 (`eval-rules-desk-v1-r4`, run `e3653b17060b53e1fd5ec022`, 114 steps)
+Submitted 2026-10-21 at about 23:21 (+08). **Hidden score: 1/40** (office 1).
+Runs so far: 3, 4, 4, 1, mean 3.0. The same image, tasks and contract went from 4 to 1, which is the run-to-run noise the pre-registration allowed for.
