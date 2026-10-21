@@ -173,3 +173,7 @@ The industrial tasks learned clearly. Loans and expenses (xlsx/pdf inputs) barel
 ## Run 2 (`eval-rules-desk-v1-r2`, run `01c4b42db9c0710825ab04bc`, 110 steps)
 Submitted 2026-10-19 at about 23:20 (+08) by the chain. **Hidden score: 4/40** (industrial 2, office 2).
 Runs so far: 3, 4, mean 3.5. The verdict waits for all 5 runs and the same-day field comparison.
+
+## Run 3 (`eval-rules-desk-v1-r3`, run `8f91e4682721bfe681525b49`, 116 steps)
+Submitted 2026-10-20 at about 23:15 (+08). **Hidden score: 4/40** (industrial 2, office 2).
+Runs so far: 3, 4, 4, mean 3.67. Per the pre-registration there is no interim decision; all 5 runs complete.
