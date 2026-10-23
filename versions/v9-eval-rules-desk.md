@@ -181,3 +181,22 @@ Runs so far: 3, 4, 4, mean 3.67. Per the pre-registration there is no interim de
 ## Run 4 (`eval-rules-desk-v1-r4`, run `e3653b17060b53e1fd5ec022`, 114 steps)
 Submitted 2026-10-21 at about 23:21 (+08). **Hidden score: 1/40** (office 1).
 Runs so far: 3, 4, 4, 1, mean 3.0. The same image, tasks and contract went from 4 to 1, which is the run-to-run noise the pre-registration allowed for.
+
+## Run 5 (`eval-rules-desk-v1-r5`, run `f52ed5646bb61bab1954d39d`, 114 steps)
+Submitted 2026-10-22 at about 23:20 (+08). **Hidden score: 3/40** (industrial 1, office 1, **software 1**). This is our first software point, which raises the leaderboard row to 6/40.
+
+## Verdict (pre-registered rule, computed 2026-10-23)
+| | n | mean | SD |
+|---|---|---|---|
+| v9, 5 identical runs (3, 4, 4, 1, 3) | 5 | **3.00** | 1.22 |
+| other users' runs evaluated on the same 5 days | 56 | **2.96** | 1.01 |
+| **difference** | | **+0.04** | SE ≈ 0.56 |
+
+- **By the pre-registered rule this is inconclusive** (between 0 and +1.5).
+- In substance the effect is about zero. The 95% interval is roughly −1.1 to +1.1, so the hoped-for **+1.5 gain is unlikely**. Training the survival habits under the hidden test's own rules did not measurably beat the field.
+- **Per domain:** office > 0 in 5/5 runs (field 0.95), industrial 4/5 (0.86), software 1/5 (0.25), everything else 0. That's indistinguishable from field base rates.
+- **What v9 did show:**
+  - training was valid and stable in all five runs
+  - the industrial tasks were clearly learned in training
+  - the identical image still ranged 1–4 on the hidden test, a direct measurement of the eval's noise for a single design
+- **What it didn't show:** any transfer of the trained habits to the hidden score, beyond the generic "trained" level every entrant gets.
